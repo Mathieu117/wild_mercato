@@ -26,6 +26,14 @@ const updateModelPlayerById = async (
   return result;
 };
 
+const postModelPlayer = async (lastname, firstname, team_idteam, picture) => {
+  const result = await connection.query(
+    "INSERT INTO player (firstname, lastname, team_idteam,picture) VALUES (?,?,?,?)",
+    [lastname, firstname, team_idteam, picture]
+  );
+  return result;
+};
+
 const deleteModelPlayerById = async (id) => {
   const [result] = await connection.query(
     "DELETE FROM player WHERE idplayer = ?",
@@ -39,4 +47,5 @@ module.exports = {
   getModelPlayerByID,
   deleteModelPlayerById,
   updateModelPlayerById,
+  postModelPlayer,
 };

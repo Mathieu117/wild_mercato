@@ -24,9 +24,20 @@ const updatePlayerById = async (req, res) => {
   res.status(200).send("Player modified");
 };
 
+const postPlayer = async (req, res) => {
+  const { lastname, firstname, team_idteam, picture } = req.body;
+  const player = await playersModel.postModelPlayer(
+    lastname,
+    firstname,
+    team_idteam,
+    picture
+  );
+  res.status(201).send("Player created");
+};
+
 const deletePlayerById = async (req, res) => {
   const id = parseInt(req.params.id);
-  const player = await usersModel.deleteModelPlayerById(id);
+  const player = await playersModel.deleteModelPlayerById(id);
   res.status(200).send("Player deleted");
 };
 
@@ -35,4 +46,5 @@ module.exports = {
   getPlayerByID,
   deletePlayerById,
   updatePlayerById,
+  postPlayer,
 };
