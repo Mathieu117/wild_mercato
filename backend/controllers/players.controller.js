@@ -6,6 +6,7 @@ const getPlayers = async (req, res) => {
 };
 
 const getPlayerByID = async (req, res) => {
+  const id = parseInt(req.params.id);
   const player = await playersModel.getModelPlayerByID(id);
   res.status(200).send(player);
 };
@@ -13,7 +14,7 @@ const getPlayerByID = async (req, res) => {
 const updatePlayerById = async (req, res) => {
   const { lastname, firstname, team_idteam, picture } = req.body;
   const id = parseInt(req.params.id);
-  const user = await usersModel.updateModelUserById(
+  const player = await playersModel.updateModelPlayerById(
     lastname,
     firstname,
     team_idteam,

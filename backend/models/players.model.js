@@ -16,7 +16,8 @@ const updateModelPlayerById = async (
   lastname,
   firstname,
   team_idteam,
-  picture
+  picture,
+  id
 ) => {
   const [result] = await connection.query(
     "UPDATE player SET lastname = ?, firstname = ?, team_idteam = ?, picture = ?  WHERE idplayer = ?",
