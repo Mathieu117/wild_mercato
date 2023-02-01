@@ -1,8 +1,11 @@
 require("dotenv").config();
-
-const app = require("./src/app");
-
+const express = require("express");
+const cors = require("cors");
+const app = express();
 const port = parseInt(process.env.APP_PORT ?? "5000", 10);
+const playersRouter = require("./routers/players.router");
+
+app.use("/players", playersRouter);
 
 app.listen(port, (err) => {
   if (err) {
