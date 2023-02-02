@@ -1,7 +1,7 @@
 import React from "react";
 import CardInfo from "./CardInfo";
 
-const YourTeamArticle = ({ team, teamSelect, teamSelectInput }) => {
+const YourTeamArticle = ({ team, teamSelect, teamSelectInput, lien }) => {
   return (
     <div className="yourTeamArticle">
       {team
@@ -13,7 +13,7 @@ const YourTeamArticle = ({ team, teamSelect, teamSelectInput }) => {
           if (teamSelect === el.name) return true;
         })
         .map((el) => {
-          return <CardInfo titre={el.name} source={el.fanion} />;
+          return <CardInfo lien={lien} source={el.fanion} />;
         })}
     </div>
   );

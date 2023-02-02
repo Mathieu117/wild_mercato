@@ -1,11 +1,11 @@
 import React from "react";
 import CardInfo from "./CardInfo";
 
-const MercatoArticle = ({ player }) => {
+const MercatoArticle = ({ player, lien }) => {
   return (
     <div className="mercatoArticle">
       {player.map((el) => {
-        return <CardInfo titre={el.lastname} source={el.picture} />;
+        return <CardInfo lien={lien} source={el.picture} />;
       })}
     </div>
   );

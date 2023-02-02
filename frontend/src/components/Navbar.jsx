@@ -1,11 +1,18 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.scss";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <h2>TEAM</h2>
-      <h2>MERCATO</h2>
-      <h2>PLAYER</h2>
+      <NavLink to={"/team"} className="navlink">
+        TEAM
+      </NavLink>
+      <NavLink to={"/"} className="navlink">
+        MERCATO
+      </NavLink>
+      <NavLink to={"/team"} className="navlink">
+        PLAYER
+      </NavLink>
     </div>
   );
 };

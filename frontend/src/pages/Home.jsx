@@ -40,7 +40,7 @@ const Home = () => {
     <div className="homeMercato">
       <div className="mercatoTrend">
         <h2>Mercato Actus</h2>
-        <MercatoArticle player={player} />
+        <MercatoArticle player={player} lien={"article"} />
       </div>
       <div className="yourTeamTrend">
         <div className="yourTeamTitle">
@@ -60,6 +60,7 @@ const Home = () => {
             team={team}
             teamSelect={teamSelect}
             teamSelectInput={teamSelectInput}
+            lien={"team"}
           />
         </div>
       </div>
