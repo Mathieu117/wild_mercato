@@ -13,7 +13,7 @@ const YourTeamSelect = ({ team, handleTeam, teamSelect }) => {
       >
         <option value="">Votre Club</option>
         {team.map((el) => {
-          return <option value={el.name}>{el.name}</option>;
+          return <option value={el.idteam}>{el.name}</option>;
         })}
       </select>
     </div>

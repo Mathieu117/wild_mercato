@@ -6,11 +6,11 @@ const YourTeamArticle = ({ team, teamSelect, teamSelectInput, lien }) => {
     <div className="yourTeamArticle">
       {team
         .filter((el) =>
-          el.city.toLowerCase().includes(teamSelectInput.toLowerCase())
+          el.name.toLowerCase().includes(teamSelectInput.toLowerCase())
         )
         .filter((el) => {
           if (teamSelect === "") return true;
-          if (teamSelect === el.name) return true;
+          if (teamSelect === el.idteam) return true;
         })
         .map((el) => {
           return <CardInfo lien={lien} source={el.fanion} />;
