@@ -32,6 +32,7 @@ const Home = () => {
   const handleTeamInput = (e) => {
     setTeamSelectInput(e.target.value);
   };
+
   useEffect(() => {
     getPlayers();
     getTeams();
